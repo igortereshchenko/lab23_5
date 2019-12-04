@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">number</th>
+                <th scope="col">model</th>
+                <th scope="col">color</th>
+                <th scope="col">price</th>
+                <th scope="col">user_id</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for car in cars %}
+            <tr >
+                <td> {{car.number}} </td>
+                <td> {{car.model}} </td>
+                <td> {{car.color}} </td>
+                <td> {{car.price}} </td>
+                <td> {{car.user_id}} </td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/create_car" type="button" class="btn btn-warning">New Car</a> </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+
+{% endblock %}
