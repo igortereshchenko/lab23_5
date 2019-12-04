@@ -1,0 +1,101 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<!--https://www.codeply.com/go/nhbdi2FkJm-->
+
+
+<div class="col-md-6 mx-auto">
+
+    <!-- form card login -->
+    <div class="card rounded-0">
+
+        <div class="card-header">
+            <h3 class="mb-0">{{form_name}}</h3>
+        </div>
+        <div class="card-body">
+
+            <form class="form"  action = "/create_car" method="POST">
+                {{ form.hidden_tag() }}
+
+
+            <div class="form-group">
+                {{ form.number.label }}
+                {{ form.number(class_="form-control") }}
+
+                {% if form.number.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.number.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.model.label }}
+                {{ form.model(class_="form-control") }}
+
+                {% if form.model.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.model.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.color.label }}
+                {{ form.color(class_="form-control") }}
+
+                {% if form.color.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.color.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.price.label }}
+                {{ form.price(class_="form-control") }}
+
+                {% if form.price.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.price.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.user_id.label }}
+                {{ form.user_id(class_="form-control") }}
+
+                {% if form.user_id.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.user_id.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+                {{ form.submit(class_="btn btn-success") }}
+            </form>
+        </div>
+        <!--/card-block-->
+    </div>
+    <!-- /form card login -->
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

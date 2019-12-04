@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th scope="col">color</th>
+                <th scope="col">brightness</th>
+                <th scope="col">f_id</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for remedy in remedys %}
+            <tr >
+                <td> {{remedy.remedy_id}} </td>
+                <td> {{remedy.remedy_name}} </td>
+                <td> {{remedy.remedy_color}} </td>
+                <td> {{remedy.remedy_brightness}} </td>
+                <td> {{remedy.feature_id}} </td>
+                <td>
+                    <a href="/edit_remedy/{{remedy.remedy_id}}" type="button" class="btn btn-warning" data-person_login="{{remedy.remedy_id}}">Edit</a>
+                    <a href="/delete_remedy/{{remedy.remedy_id}}" type="button" class="btn btn-warning" data-person_login="{{remedy.remedy_id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/new_remedy" type="button" class="btn btn-warning">New Remedy</a> </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+
+{% endblock %}
