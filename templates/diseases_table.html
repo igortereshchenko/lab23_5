@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">disease_id</th>
+                <th scope="col">disease_name</th>
+                <th scope="col">severity</th>
+                <th scope="col">symptom_id</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for disease in diseases %}
+            <tr >
+                <td> {{disease.disease_id}} </td>
+                <td> {{disease.disease_name}} </td>
+                <td> {{disease.severity}} </td>
+                <td> {{disease.symptom_id}} </td>
+                <td>
+                    <a href="/edit_disease/{{disease.disease_id}}" type="button" class="btn btn-warning" data-person_login="{{disease.disease_id}}">Edit</a>
+                    <a href="/delete_disease/{{disease.disease_id}}" type="button" class="btn btn-warning" data-person_login="{{disease.disease_id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/new_disease" type="button" class="btn btn-warning">New Disease</a> </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+
+{% endblock %}

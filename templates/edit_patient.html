@@ -1,0 +1,91 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<!--https://www.codeply.com/go/nhbdi2FkJm-->
+
+
+<div class="col-md-6 mx-auto">
+
+    <!-- form card login -->
+    <div class="card rounded-0">
+
+        <div class="card-header">
+            <h3 class="mb-0">{{form_name}}</h3>
+        </div>
+        <div class="card-body">
+
+            <form class="form" method="POST">
+                {{ form.hidden_tag() }}
+
+                                
+            <div class="form-group">
+                {{ form.patient_age.label }}
+                {{ form.patient_age(class_="form-control") }}
+
+                {% if form.patient_age.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.patient_age.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.patient_height.label }}
+                {{ form.patient_height(class_="form-control") }}
+
+                {% if form.patient_height.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.patient_height.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.patient_weight.label }}
+                {{ form.patient_weight(class_="form-control") }}
+
+                {% if form.patient_weight.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.patient_weight.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+            <div class="form-group">
+                {{ form.patient_temperature.label }}
+                {{ form.patient_temperature(class_="form-control") }}
+
+
+                {% if form.patient_temperature.errors%}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in form.patient_temperature.errors %}
+                             <div>{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {%endif%}
+            </div>
+
+
+                {{ form.submit(class_="btn btn-success") }}
+            </form>
+        </div>
+        <!--/card-block-->
+    </div>
+    <!-- /form card login -->
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
